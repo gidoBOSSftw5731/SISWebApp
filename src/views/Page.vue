@@ -6,6 +6,13 @@
       <router-view class="content" />
     </div>
     <Loader class="page-loader" v-if="pageLoading" />
+    <button class="navbar-toggler mx-3 d-lg-none ml-auto flex" id="mobilemenu" v-on:click="toggleOffCanvas" type="button" data-toggle="offcanvas" aria-expanded="false" aria-label="Toggle navigation">
+<!--class is in under an hour this is a bodge-->
+<svg class="align-center" viewBox="0 0 100 80" width="40" height="40">
+  <rect width="100" height="15"></rect>
+  <rect y="30" width="100" height="15"></rect>
+  <rect y="60" width="100" height="15"></rect>
+</svg>    </button>
   </div>
 </template>
 
@@ -36,6 +43,9 @@
         }
         return true;
       },
+      toggleOffCanvas() {
+        this.$store.commit("page/toggleOffCanvas");
+      },
       async fetch() {
         this.$store.commit("page/setPageLoading", true);
         if (!this.checkLoggedIn()) {
@@ -59,6 +69,15 @@
 <style>
   .page-loader {
     z-index: 1030;
+  }
+
+  #mobilemenu {
+    z-index: 3000;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 3rem;
+    width: 3rem;
   }
 
   .navbar {

@@ -8,7 +8,7 @@
     <Loader class="page-loader" v-if="pageLoading" />
     <button class="navbar-toggler mx-3 d-lg-none ml-auto flex" id="mobilemenu" v-on:click="toggleOffCanvas" type="button" data-toggle="offcanvas" aria-expanded="false" aria-label="Toggle navigation">
 <!--class is in under an hour this is a bodge-->
-<svg class="align-center" viewBox="0 0 100 80" width="40" height="40">
+<svg class="align-center mb-6" viewBox="0 0 100 80" width="40" height="40">
   <rect width="100" height="15"></rect>
   <rect y="30" width="100" height="15"></rect>
   <rect y="60" width="100" height="15"></rect>
@@ -76,7 +76,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    height: 3rem;
+    height: 8rem;
     width: 3rem;
   }
 
